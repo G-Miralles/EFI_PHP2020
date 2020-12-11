@@ -1,4 +1,10 @@
-Inicio despliegue de datos
+
+
+@if(Session::has('Mensaje')){{
+    Session::get('Mensaje')
+}}
+@endif
+
 
 <a href="{{ url('empleados/create') }}"> Nuevo empleado </a>
 

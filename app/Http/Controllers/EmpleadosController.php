@@ -54,7 +54,7 @@ class EmpleadosController extends Controller
         Empleados::insert($datosEmpleado);
 
         //return response()->json($datosEmpleado);
-        return redirect('empleados');
+        return redirect('empleados')->with('Mensaje', '¡Empleado agregado con éxito!');
 
     }
 
@@ -108,9 +108,11 @@ class EmpleadosController extends Controller
 
         Empleados::where('id', '=', $id)->update($datosEmpleado);
 
-        $Empleado= Empleados::findOrFail($id);
+        //$Empleado= Empleados::findOrFail($id);
+        //return view('empleados.edit', compact('Empleado'));
 
-        return view('empleados.edit', compact('Empleado'));
+        return redirect('empleados')->with('Mensaje', '¡Empleado modificado con éxito!');
+
 
     }
 
@@ -129,7 +131,9 @@ class EmpleadosController extends Controller
         if(Storage::delete('public/'.$Empleado->photo)){ //borro la foto de la carpeta storage y el registro abajo
             Empleados::destroy($id);
         }
+        //return redirect('empleados');
 
-        return redirect('empleados');
+        return redirect('empleados')->with('Mensaje', '¡Empleado eliminado con éxito!');
+
     }
 }
