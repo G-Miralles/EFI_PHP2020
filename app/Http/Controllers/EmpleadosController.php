@@ -113,7 +113,6 @@ class EmpleadosController extends Controller
 
         return redirect('empleados')->with('Mensaje', '¡Empleado modificado con éxito!');
 
-
     }
 
     /**
