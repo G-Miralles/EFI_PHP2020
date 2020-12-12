@@ -20,10 +20,8 @@ Route::get('/', function () {
 //Route::get('/empleados/create','EmpleadosController@create');
 
 
-Route::resource('empleados', 'EmpleadosController');
-
-
+Route::resource('empleados', 'EmpleadosController')->middleware('auth');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'EmpleadosController@index')->name('home');

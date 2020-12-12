@@ -104,6 +104,19 @@ class EmpleadosController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $inputs=[
+            'name' => 'required|string|max:100',
+            'surname' => 'required|string|max:100',
+            'email' => 'required|email',
+        ];
+
+        if ($request->hasFile('photo')){
+            $inputs+=['photo' => 'required|max:10000|mimes:jpeg,png,jpg'];
+        }
+        $Mensaje=["required"=>'El campo :attribute es requerido'];
+
+        $this->validate($request, $inputs, $Mensaje);
+
         $datosEmpleado=$request->except(['_token','_method']);
 
         if ($request->hasFile('photo')){
