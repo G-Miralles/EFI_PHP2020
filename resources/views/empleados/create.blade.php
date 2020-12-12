@@ -4,7 +4,7 @@
 
 <div class="container">
 
-@if(count($errors)>0)
+/*@if(count($errors)>0)
 <div class="alert alert-danger" role="alert">
     <ul>
         @foreach ($errors->all() as $error)
@@ -12,7 +12,7 @@
         @endforeach
     </ul>
 </div>
-@endif
+@endif*/
         
 
 <form action="{{ url('/empleados') }}" class="form-horizontal" method="post" enctype="multipart/form-data">
