@@ -53,16 +53,16 @@ integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbi
         <tbody  > 
         @foreach ($Empleados as $Empleado)
             <tr>
-                <td class="text-center" >{{$loop->iteration}}</td>
-                <td class="text-center">
+                <td class="text-center align-middle" >{{$loop->iteration}}</td>
+                <td class="text-center align-middle">
                     <img src="{{ asset('storage').'/'.$Empleado->photo }}" class="img-thumbnail img-fluid" alt="" width="100">
                 </td>
-                <td class="text-center" >{{ $Empleado->name . " " . $Empleado->surname  }}</td>
-                <td class="text-center" >{{ $Empleado->email  }}</td>
-                <td class="text-center"> 
+                <td class="text-center align-middle" >{{ $Empleado->name . " " . $Empleado->surname  }}</td>
+                <td class="text-center align-middle" >{{ $Empleado->email  }}</td>
+                <td class="text-center align-middle"> 
 
                     <a class="btn btn-success" href="{{ url('/empleados/'.$Empleado->id.'/edit') }}">
-                        Ver
+                        Ver más
                     </a>
 
                     <a class="btn btn-primary" href="{{ url('/empleados/'.$Empleado->id.'/edit') }}">
