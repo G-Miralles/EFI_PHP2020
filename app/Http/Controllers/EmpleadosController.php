@@ -46,6 +46,9 @@ class EmpleadosController extends Controller
             'name' => 'required|string|max:100',
             'surname' => 'required|string|max:100',
             'email' => 'required|email',
+            'dni' => 'required|integer',
+            'address' => 'required|string|max:100',
+            'phone' => 'required|integer',
             'photo' => 'required|max:10000|mimes:jpeg,png,jpg',
         ];
         $Mensaje=["required"=>'El campo :attribute es requerido'];
@@ -107,6 +110,9 @@ class EmpleadosController extends Controller
             'name' => 'required|string|max:100',
             'surname' => 'required|string|max:100',
             'email' => 'required|email',
+            'dni' => 'required|integer',
+            'address' => 'required|string|max:100',
+            'phone' => 'required|integer',
         ];
 
         if ($request->hasFile('photo')){

@@ -18,6 +18,24 @@
 </div>
 
 <div class="form-group">
+    <label for="Documento" class="control-label"> {{'Documento'}} </label>
+    <input type="number" class="form-control {{$errors->has('dni')?'is-invalid':''}}" name="dni" id="dni" value="{{ isset($Empleado->dni) ? $Empleado->dni:old('dni')}}">
+    {!! $errors->first('dni', '<div class="invalid-feedback">:message</div>') !!}
+</div>
+
+<div class="form-group">
+    <label for="Direccion" class="control-label"> {{'Direccion'}} </label>
+    <input type="text" class="form-control {{$errors->has('address')?'is-invalid':''}}" name="address" id="address" value="{{ isset($Empleado->address) ? $Empleado->address:old('address')}}">
+    {!! $errors->first('address', '<div class="invalid-feedback">:message</div>') !!}
+</div>
+
+<div class="form-group">
+    <label for="Telefono" class="control-label"> {{'Telefono'}} </label>
+    <input type="number" class="form-control {{$errors->has('phone')?'is-invalid':''}}" name="phone" id="phone" value="{{ isset($Empleado->phone) ? $Empleado->phone:old('phone')}}">
+    {!! $errors->first('phone', '<div class="invalid-feedback">:message</div>') !!}
+</div>
+
+<div class="form-group">
     <label for="Foto" class="control-label"> {{'Foto'}} </label>
     @if (isset($Empleado->photo))
         </br>

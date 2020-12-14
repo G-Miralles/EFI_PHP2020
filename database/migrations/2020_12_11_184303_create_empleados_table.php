@@ -18,9 +18,9 @@ class CreateEmpleadosTable extends Migration
 
             $table->string('name');
             $table->string('surname');
-            $table->string('dni');
+            $table->integer('dni');
             $table->string('address');
-            $table->string('phone');
+            $table->bigInteger('phone');
             $table->string('email');
             $table->string('photo');
 
