@@ -25,3 +25,5 @@ Route::resource('empleados', 'EmpleadosController')->middleware('auth');
 Auth::routes();
 
 Route::get('/home', 'EmpleadosController@index')->name('home');
+
+

@@ -21,7 +21,6 @@ class EmpleadosController extends Controller
 
         return view('empleados.index', $datos);
     }
-
     /**
      * Show the form for creating a new resource.
      *
