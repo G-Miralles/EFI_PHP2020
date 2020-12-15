@@ -1,11 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
+<link href="{{ asset('css/auth.css') }}" rel="stylesheet">
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Reestablecer contraseña') }}</div>
+                <div class="card-header text-center">{{ __('Reestablecer contraseña') }}</div>
 
                 <div class="card-body">
                     @if (session('status'))
