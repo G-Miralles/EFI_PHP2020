@@ -96,6 +96,14 @@ class EmpleadosController extends Controller
         return view('empleados.edit', compact('Empleado'));
     }
 
+    public function viewMore($id)
+    {
+        //
+        $Empleado= Empleados::findOrFail($id);
+
+        return view('empleados.viewmore', compact('Empleado'));
+    }
+
     /**
      * Update the specified resource in storage.
      *
