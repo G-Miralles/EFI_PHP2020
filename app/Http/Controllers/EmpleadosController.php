@@ -101,7 +101,7 @@ class EmpleadosController extends Controller
         //
         $Empleado= Empleados::findOrFail($id);
 
-        return view('empleados.viewmore', compact('Empleado'));
+        return view('empleados.viewMore', compact('Empleado'));
     }
 
     /**

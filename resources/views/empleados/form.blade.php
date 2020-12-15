@@ -5,8 +5,9 @@
         <div class="col-md-4">
         <div class="card" style="width: 50rem;">
             <div id="cardBody" class="card-body">
-                <h5  class="card-title text-center">{{ $Mod=='create' ? 'Agregar un nuevo empleado' : 'Editar empleado' }}: {{ isset($Empleado->name) ? $Empleado->name:old('name')}} {{ isset($Empleado->surname) ? $Empleado->surname:old('surname')}}</h5>
-
+                <h5  class="card-title text-center">{{ $Mod=='create' ? 'Agregar un nuevo empleado' : 'Editar empleado' }} {{ isset($Empleado->name) ? $Empleado->name:old('name')}} {{ isset($Empleado->surname) ? $Empleado->surname:old('surname')}}</h5>
+                <hr style="background-color: #dee2e6">
+                
                 <div class="form-group">
                     <label for="Nombre" class="control-label"> {{'Nombre'}} </label>
                     <input type="text" class="form-control {{$errors->has('name')?'is-invalid':''}}" name="name" id="name" value="{{ isset($Empleado->name) ? $Empleado->name:old('name')}}">

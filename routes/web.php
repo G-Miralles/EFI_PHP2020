@@ -26,4 +26,4 @@ Auth::routes();
 
 Route::get('/home', 'EmpleadosController@index')->name('home');
 
-
+Route::get('/empleados/{id}/viewmore', 'EmpleadosController@viewMore')->middleware('auth');
