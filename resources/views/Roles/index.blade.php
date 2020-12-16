@@ -6,7 +6,14 @@
 integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
 
 <div class="container">
+    
+    @if(Session::has('Mensaje'))
 
+    <div class="alert alert-success text-center" role="alert">  
+        {{Session::get('Mensaje')}}
+    </div>
+
+@endif
 
     <div class="p-4">
         <div class="row">

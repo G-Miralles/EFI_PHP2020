@@ -10,12 +10,14 @@
                 
                 <div class="form-group">
                     <label for="Nombre" class="control-label"> {{'Nombre'}} </label>
-                    <input type="text" name="name" placeholder="Ingrese un nombre para el nuevo rol" class="form-control" value="{{ isset($roles->name) ? $roles->name:old('name')}}">
+                    <input type="text" name="name" placeholder="Ingrese un nombre para el nuevo rol" class="form-control {{$errors->has('name')?'is-invalid':''}}" value="{{ isset($roles->name) ? $roles->name:old('name')}}">
+                    {!! $errors->first('name', '<div class="invalid-feedback">:message</div>') !!}
                 </div>
 
                 <div class="form-group">
                     <label for="Descripcion">{{'Descripcion'}}</label>
-                    <textarea class="form-control" name="description" rows="3" placeholder="Ingrese una descripcion">{{ isset($roles->description) ? $roles->description:old('description')}}</textarea>
+                    <textarea class="form-control {{$errors->has('description')?'is-invalid':''}} " name="description" rows="3" maxlength="255" placeholder="Ingrese una descripcion">{{ isset($roles->description) ? $roles->description:old('description')}}</textarea>
+                    {!! $errors->first('description', '<div class="invalid-feedback">:message</div>') !!}
                 </div>
 
                 <div class="text-center">

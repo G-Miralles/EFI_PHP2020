@@ -47,10 +47,14 @@ class RolesController extends Controller
             'description' => 'required|string|max:255',
         ];
 
+        $Mensaje=["required"=>'El campo :attribute es requerido'];
+
+        $this->validate($request, $inputs, $Mensaje);
+
         $datosRoles=$request->except('_token');
         Roles::insert($datosRoles);
 
-        return redirect('roles')->with('Mensaje', '¡Empleado agregado con éxito!');
+        return redirect('roles')->with('Mensaje', '¡Rol creado con éxito!');
     }
 
     /**
@@ -94,11 +98,15 @@ class RolesController extends Controller
             'description' => 'required|string|max:255',
         ];
 
+        $Mensaje=["required"=>'El campo :attribute es requerido'];
+
         $datosRoles=$request->except(['_token','_method']);
+
+        $this->validate($request, $inputs, $Mensaje);
 
         Roles::where('id', '=', $id)->update($datosRoles);
 
-        return redirect('roles');
+        return redirect('roles')->with('Mensaje', '¡Rol modificado con éxito!');
     }
 
     /**
@@ -114,6 +122,6 @@ class RolesController extends Controller
 
         Roles::destroy($id);
 
-        return redirect('roles');
+        return redirect('roles')->with('Mensaje', '¡Rol eliminado con éxito!');
     }
 }
