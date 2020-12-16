@@ -107,8 +107,13 @@ class RolesController extends Controller
      * @param  \App\Roles  $roles
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Roles $roles)
+    public function destroy($id)
     {
         //
+        $roles= Roles::findOrFail($id);
+
+        Roles::destroy($id);
+
+        return redirect('roles');
     }
 }
