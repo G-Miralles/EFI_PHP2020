@@ -7,9 +7,9 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
-## About Laravel
+## El proyecto sintesis
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+En este proyecro se ha realizado un crud con login, registro y recuperacion de contraseñas, via mailtrap, el cual cuenta con una seccion empleados; donde podemos agregar uno nuevo o en casa de que ya exista/n alguno/s editarlos o borrarlos. Los mismo se visualizan en una tabla paginada de a 5 la cual posee un buscador en tiempo real, hecho en JavaScript, para filtrar por el campo que querramos. En la segunda seccion podemos agregar, editar o eliminar los distintos roles que pueden ocupar los empleados. Cada seccion cuenta con controles de errores y mensajes para mejorar la experiencia del ususario.
 
 - [Simple, fast routing engine](https://laravel.com/docs/routing).
 - [Powerful dependency injection container](https://laravel.com/docs/container).
