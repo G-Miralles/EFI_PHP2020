@@ -6,7 +6,7 @@ use App\Empleados;
 use App\Roles;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
-
+use Symfony\Contracts\Service\Attribute\Required;
 
 class EmpleadosController extends Controller
 {
@@ -30,7 +30,10 @@ class EmpleadosController extends Controller
     public function create()
     {
         //
-        return view('empleados.create');
+        $roles = Roles::all();
+    
+
+        return view('empleados.create', compact('roles'));
     }
 
     /**
@@ -46,6 +49,7 @@ class EmpleadosController extends Controller
         $inputs=[
             'name' => 'required|string|max:100',
             'surname' => 'required|string|max:100',
+            'roles_id' => 'required|string|max:100',
             'email' => 'required|email',
             'dni' => 'required|integer',
             'address' => 'required|string|max:100',
@@ -122,6 +126,7 @@ class EmpleadosController extends Controller
         $inputs=[
             'name' => 'required|string|max:100',
             'surname' => 'required|string|max:100',
+            'roles_id' => 'required|string|max:100',
             'email' => 'required|email',
             'dni' => 'required|integer',
             'address' => 'required|string|max:100',

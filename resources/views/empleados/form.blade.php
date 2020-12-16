@@ -19,6 +19,19 @@
                     <input type="text" class="form-control {{$errors->has('surname')?'is-invalid':''}}" name="surname" id="surname" value="{{ isset($Empleado->surname) ? $Empleado->surname:old('surname')}}">
                     {!! $errors->first('surname', '<div class="invalid-feedback">:message</div>') !!}
                 </div>
+
+                <div class="form-group">
+                    <label for="Rol" class="control-label"> {{'Rol'}} </label>
+                    <select name="roles_id" id="roles_id" class="form-control">
+                        @if( $Mod=='create' ))
+                            @foreach($roles as $rol)
+                                    <option value="{{ $rol->id}}"> {{ $rol->name}} </option>
+                            @endforeach
+                        @endif
+                    </select>
+
+                </div>
+
                 <div class="form-group">
                     <label for="Email" class="control-label"> {{'Email'}} </label>
                     <input type="email" class="form-control {{$errors->has('email')?'is-invalid':''}}" name="email" id="email" value="{{ isset($Empleado->email) ? $Empleado->email:old('email')}}">
