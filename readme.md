@@ -9,25 +9,17 @@
 
 ## El proyecto sintesis
 
-En este proyecro se ha realizado un crud con login, registro y recuperacion de contraseñas, via mailtrap, el cual cuenta con una seccion empleados; donde podemos agregar uno nuevo o en casa de que ya exista/n alguno/s editarlos o borrarlos. Los mismo se visualizan en una tabla paginada de a 5 la cual posee un buscador en tiempo real, hecho en JavaScript, para filtrar por el campo que querramos. En la segunda seccion podemos agregar, editar o eliminar los distintos roles que pueden ocupar los empleados. Cada seccion cuenta con controles de errores y mensajes para mejorar la experiencia del ususario.
+En este proyecro se ha realizado un crud con login, registro y recuperacion de contraseñas, via mailtrap, el cual cuenta con una seccion empleados; donde podemos agregar uno nuevo o en caso de que ya exista/n alguno/s editarlos o borrarlos. Los mismo se visualizan en una tabla paginada de a 5 la cual posee un buscador en tiempo real, hecho en JavaScript, para filtrar por el campo que querramos. En la segunda seccion podemos agregar, editar o eliminar los distintos roles que pueden ocupar los empleados. Cada seccion cuenta con controles de errores y mensajes para mejorar la experiencia del ususario.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Proceso de instalacion
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+1-Clonamos el reposositorio (git clone https://github.com/G-Miralles/EFI_PHP2020.git)
+2-Instalamos el manejador de paquete composer (composer install) o actulizarlo en caso de que lo tengamos (composer update)
+3-Ahora creamos el schmema para DB y configuramos en el archivo .env, que esta dentro del proyecto, las credenciales(DB_DATABASE, DB_USERNAME y DB_PASSWORD)
+4-Ahora realizamos las migraciones → php artisan migrate 
+5-Corremos el proyecto → php artisan serve
 
-## Learning Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1100 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost you and your team's skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
+## En cuanto a la API
 
 We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
 
