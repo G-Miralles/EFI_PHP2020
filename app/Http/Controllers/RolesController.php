@@ -69,9 +69,13 @@ class RolesController extends Controller
      * @param  \App\Roles  $roles
      * @return \Illuminate\Http\Response
      */
-    public function edit(Roles $roles)
+    public function edit($id)
     {
         //
+
+        $roles= Roles::findOrFail($id);
+
+        return view('Roles.editRoles', compact('roles'));
     }
 
     /**
@@ -81,9 +85,18 @@ class RolesController extends Controller
      * @param  \App\Roles  $roles
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Roles $roles)
+    public function update(Request $request, Roles $roles, $id)
     {
         //
+        $inputs=[
+            'name' => 'required|string|max:100',
+        ];
+
+        $datosRoles=$request->except('_token');
+
+        Roles::where('id', '=', $id)->update($inputs);
+
+        return redirect('roles');
     }
 
     /**

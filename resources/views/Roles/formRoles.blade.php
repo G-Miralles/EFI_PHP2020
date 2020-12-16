@@ -10,12 +10,12 @@
                 
                 <div class="form-group">
                     <label for="Nombre" class="control-label"> {{'Nombre'}} </label>
-                    <input type="text" name="name" placeholder="Ingrese un nombre para el nuevo rol" class="form-control">
+                    <input type="text" name="name" placeholder="Ingrese un nombre para el nuevo rol" class="form-control" value="{{ isset($roles->name) ? $roles->name:old('name')}}">
                 </div>
 
                 <div class="text-center">
                     <a class="btn btn-primary" href="{{ url('roles') }}"> ← Vovler al Inicio </a>
-                    <input type="submit" class="btn btn-success" value="Agregar">
+                    <input type="submit" class="btn btn-success" value="{{ $Mod=='create' ? 'Agregar' : 'Editar' }}">
                 </div>
                 </div>
             </div>
