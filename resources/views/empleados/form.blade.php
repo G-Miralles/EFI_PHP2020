@@ -29,7 +29,7 @@
                             @endforeach
                         @else 
                             @foreach($roles as $rols)
-                                <option value="{{ $rols->id}}" selected="{{$rol->name }}" > {{ $rols->name}} </option>
+                                <option value="{{ $rols->id}}" {{ $rol->name == $rols->name ? 'selected' : '' }}> {{ $rols->name}} </option>
                             @endforeach
                         @endif
                     </select>
