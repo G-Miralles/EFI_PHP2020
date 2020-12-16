@@ -22,9 +22,11 @@ class CreateEmpleadosTable extends Migration
             $table->string('address');
             $table->bigInteger('phone');
             $table->string('email');
+            $table->integer('roles_id')->unsigned();
             $table->string('photo');
 
             $table->timestamps();
+            $table->foreign('roles_id')->references('id')->on('roles')->onDelete('cascade');
         });
     }
 
