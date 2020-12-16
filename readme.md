@@ -13,7 +13,7 @@ En este proyecro se ha realizado un crud con login, registro y recuperacion de c
 
 ## Proceso de instalacion
 
-1-Clonamos el reposositorio (git clone https://github.com/G-Miralles/EFI_PHP2020.git)
+**[1-Clonamos el reposositorio (git clone https://github.com/G-Miralles/EFI_PHP2020.git)]
 2-Instalamos el manejador de paquete composer (composer install) o actulizarlo en caso de que lo tengamos (composer update)
 3-Ahora creamos el schmema para DB y configuramos en el archivo .env, que esta dentro del proyecto, las credenciales(DB_DATABASE, DB_USERNAME y DB_PASSWORD)
 4-Ahora realizamos las migraciones → php artisan migrate 
