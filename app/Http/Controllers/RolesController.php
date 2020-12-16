@@ -15,6 +15,10 @@ class RolesController extends Controller
     public function index()
     {
         //
+
+        $datos['Roles']=Roles::paginate(5);
+
+        return view('Roles.index', $datos);
     }
 
     /**
@@ -25,6 +29,7 @@ class RolesController extends Controller
     public function create()
     {
         //
+        return view('Roles.createRoles');
     }
 
     /**
@@ -36,6 +41,15 @@ class RolesController extends Controller
     public function store(Request $request)
     {
         //
+
+        $inputs=[
+            'name' => 'required|string|max:100',
+        ];
+
+        $datosRoles=$request->except('_token');
+        Roles::insert($datosRoles);
+
+        return redirect('roles')->with('Mensaje', '¡Empleado agregado con éxito!');
     }
 
     /**

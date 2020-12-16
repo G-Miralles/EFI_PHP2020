@@ -98,7 +98,11 @@ class EmpleadosController extends Controller
         //
         $Empleado= Empleados::findOrFail($id);
 
-        return view('empleados.edit', compact('Empleado'));
+        $roles = Roles::all();
+
+        $rol= Roles::where('id', $Empleado->roles_id) -> first();
+
+        return view('empleados.edit', compact('Empleado', 'rol', 'roles'));
     }
 
     public function viewMore($id)

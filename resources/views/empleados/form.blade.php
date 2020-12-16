@@ -27,6 +27,10 @@
                             @foreach($roles as $rol)
                                     <option value="{{ $rol->id}}"> {{ $rol->name}} </option>
                             @endforeach
+                        @else 
+                            @foreach($roles as $rols)
+                                <option value="{{ $rols->id}}" selected="{{$rol->name }}" > {{ $rols->name}} </option>
+                            @endforeach
                         @endif
                     </select>
 
