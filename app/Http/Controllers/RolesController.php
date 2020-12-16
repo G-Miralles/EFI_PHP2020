@@ -44,6 +44,7 @@ class RolesController extends Controller
 
         $inputs=[
             'name' => 'required|string|max:100',
+            'description' => 'required|string|max:255',
         ];
 
         $datosRoles=$request->except('_token');
@@ -90,11 +91,12 @@ class RolesController extends Controller
         //
         $inputs=[
             'name' => 'required|string|max:100',
+            'description' => 'required|string|max:255',
         ];
 
-        $datosRoles=$request->except('_token');
+        $datosRoles=$request->except(['_token','_method']);
 
-        Roles::where('id', '=', $id)->update($inputs);
+        Roles::where('id', '=', $id)->update($datosRoles);
 
         return redirect('roles');
     }

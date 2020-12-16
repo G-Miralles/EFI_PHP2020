@@ -13,6 +13,11 @@
                     <input type="text" name="name" placeholder="Ingrese un nombre para el nuevo rol" class="form-control" value="{{ isset($roles->name) ? $roles->name:old('name')}}">
                 </div>
 
+                <div class="form-group">
+                    <label for="Descripcion">{{'Descripcion'}}</label>
+                    <textarea class="form-control" name="description" rows="3" placeholder="Ingrese una descripcion">{{ isset($roles->description) ? $roles->description:old('description')}}</textarea>
+                </div>
+
                 <div class="text-center">
                     <a class="btn btn-primary" href="{{ url('roles') }}"> ← Vovler al Inicio </a>
                     <input type="submit" class="btn btn-success" value="{{ $Mod=='create' ? 'Agregar' : 'Editar' }}">

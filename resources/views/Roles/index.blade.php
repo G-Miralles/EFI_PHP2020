@@ -47,7 +47,7 @@ integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbi
                 <tr>
                     <td class="text-center align-middle" >{{$loop->iteration}}</td>
                     <td class="text-center align-middle" >{{ $Rol->name }}</td>
-                    <td class="text-center align-middle" > </td>
+                    <td class="text-center align-middle" > {{ $Rol->description }}</td>
                     <td class="text-center align-middle"> 
                         <a class="btn btn-primary" href="{{ url('/roles/'.$Rol->id.'/edit') }}">
                             Editar
