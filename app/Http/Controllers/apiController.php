@@ -20,7 +20,7 @@ class apiController extends Controller
 
     public function empleados()
     {
-        $empleados = Empleados::select('id', 'name', 'surname', 'email', 'dni', 'address', 'phone', 'photo') -> get();
+        $empleados = Empleados::select('id', 'name', 'surname', 'email', 'dni', 'roles_id', 'address', 'phone', 'photo') -> get();
         
         return ($empleados);
     }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Empleados;
+use App\Roles;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -99,9 +100,13 @@ class EmpleadosController extends Controller
     public function viewMore($id)
     {
         //
-        $Empleado= Empleados::findOrFail($id);
+        $Empleado= Empleados::where('id', '=', $id) -> first();
 
-        return view('empleados.viewMore', compact('Empleado'));
+        $rol= Roles::where('id', $Empleado->roles_id) -> first();
+
+        //dd($rol);
+
+        return view('empleados.viewMore', compact('Empleado', 'rol'));
     }
 
     /**

@@ -18,14 +18,14 @@ integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbi
         <div class="col-md-4">
         <div class="card" style="width: 40rem;">
             <div id="cardBody" class="card-body">
-                <h5  class="card-title text-center"> Empleado: {{ isset($Empleado->name) ? $Empleado->name:old('name')}} {{ isset($Empleado->surname) ? $Empleado->surname:old('surname')}}</h5>
+                <h5  class="card-title text-center"> Empleado: {{ $Empleado->name . " " . $Empleado->surname}}</h5>
                 <hr style="background-color: #dee2e6">
 
                 <div class="input-group">
                     <div class="input-group-text bg-white">
                         <i class="fas fa-user"></i>
                     </div>
-                    <input type="text" disabled class="form-control" name="email" id="email" value="{{ isset($Empleado->name) ? $Empleado->name:old('name')}} {{ isset($Empleado->surname) ? $Empleado->surname:old('surname')}}">
+                    <input type="text" disabled class="form-control"  value="{{ $Empleado->name . " " . $Empleado->surname}}">
                 </div>
 
                 </br>
@@ -34,7 +34,7 @@ integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbi
                     <div class="input-group-text bg-white">
                         <i class="fas fa-envelope-square"></i>
                     </div>
-                    <input type="email" disabled class="form-control" name="email" id="email" value="{{ isset($Empleado->email) ? $Empleado->email:old('email')}}">
+                    <input type="email" disabled class="form-control"  value="{{$Empleado->email}}">
                 </div>
 
                 </br>
@@ -43,7 +43,7 @@ integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbi
                     <div class="input-group-text bg-white">
                         <i class="fas fa-id-card"></i>
                     </div>
-                    <input type="text" disabled class="form-control" name="email" id="email" value="{{ isset($Empleado->dni) ? $Empleado->dni:old('dni')}}">
+                    <input type="text" disabled class="form-control"  value="{{$Empleado->dni}}">
                 </div>
                 
                 </br>
@@ -52,7 +52,7 @@ integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbi
                     <div class="input-group-text bg-white">
                         <i class="fas fa-home"></i>
                     </div>
-                    <input type="text" disabled class="form-control" name="email" id="email" value="{{ isset($Empleado->address) ? $Empleado->address:old('address')}}">
+                    <input type="text" disabled class="form-control"  value="{{$Empleado->address}}">
                 </div>
                 
                 </br> 
@@ -62,12 +62,20 @@ integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbi
                     <div class="input-group-text bg-white">
                         <i class="fas fa-mobile-alt"></i>
                     </div>
-                    <input type="text" disabled class="form-control" name="email" id="email" value="{{ isset($Empleado->phone) ? $Empleado->phone:old('phone')}}">
+                    <input type="text" disabled class="form-control" value="{{ $Empleado->phone}}">
                 </div>
                 
                 </br>
-                
-                
+
+                <div class="input-group">
+                    <div class="input-group-text bg-white">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <input type="text" disabled class="form-control" value="{{$rol->name}}">
+                </div>
+
+                </br>
+                                
                 <div class="form-group">
                     <label for="Foto" class="control-label"> {{'Foto'}} </label>
                     <div class="text-center">

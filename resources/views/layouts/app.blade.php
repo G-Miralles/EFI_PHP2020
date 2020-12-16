@@ -38,7 +38,11 @@
                         <li class="nav-item">
                             <a id="enlace" class="nav-link" href="{{ route('empleados.index') }}">{{ __('Empleados') }}</a>
                         </li>
+                        <li class="nav-item">
+                            <a id="enlace" class="nav-link" href="{{ route('roles.index') }}">{{ __('Roles') }}</a>
+                        </li>
                     </ul>
+
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">

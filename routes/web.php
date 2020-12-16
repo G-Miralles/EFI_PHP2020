@@ -22,6 +22,8 @@ Route::get('/', function () {
 
 Route::resource('empleados', 'EmpleadosController')->middleware('auth');
 
+Route::resource('roles', 'RolesController')->middleware('auth');
+
 Auth::routes();
 
 Route::get('/home', 'EmpleadosController@index')->name('home');
