@@ -20,3 +20,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('/users', 'apiController@users')->name('api.users');
 
 Route::get('/empleados', 'apiController@empleados')->name('api.empleados');
+
+Route::get('/roles', 'apiController@roles')->name('api.roles');
+

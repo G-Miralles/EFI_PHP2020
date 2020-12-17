@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use App\Empleados;
+use App\Roles;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -25,6 +26,10 @@ class apiController extends Controller
         return ($empleados);
     }
 
-    
-
+    public function roles()
+    {
+        $roles = Roles::select('id', 'name', 'description') -> get();
+        
+        return ($roles);
+    }
 }
