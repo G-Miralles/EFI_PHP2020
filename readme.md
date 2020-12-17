@@ -1,4 +1,4 @@
-<p align="center"><img src="https://i.imgur.com/j4Sxnvc.png"></p>
+<p align="center"><img src="https://i.imgur.com/2EC8CN8.png"></p>
 
 
 ## El proyecto sintesis
