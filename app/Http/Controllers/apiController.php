@@ -32,4 +32,8 @@ class apiController extends Controller
         
         return ($roles);
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> dcff5a5c70c65484fec160e4240e9ba0a7e2c954
 }

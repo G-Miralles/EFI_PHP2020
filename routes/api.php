@@ -22,4 +22,7 @@ Route::get('/users', 'apiController@users')->name('api.users');
 Route::get('/empleados', 'apiController@empleados')->name('api.empleados');
 
 Route::get('/roles', 'apiController@roles')->name('api.roles');
+<<<<<<< HEAD
 
+=======
+>>>>>>> dcff5a5c70c65484fec160e4240e9ba0a7e2c954
