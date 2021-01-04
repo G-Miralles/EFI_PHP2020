@@ -19,10 +19,13 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::get('/users', 'apiController@users')->name('api.users');
 
+Route::get('/user/{user_id}', 'apiController@user')->name('api.user');
+
 Route::get('/empleados', 'apiController@empleados')->name('api.empleados');
 
-Route::get('/roles', 'apiController@roles')->name('api.roles');
-<<<<<<< HEAD
+Route::get('/empleado/{empleado_id}', 'apiController@empleado')->name('api.empleado');
 
-=======
->>>>>>> dcff5a5c70c65484fec160e4240e9ba0a7e2c954
+Route::get('/roles', 'apiController@roles')->name('api.roles');
+
+Route::get('/rol/{rol_id}', 'apiController@rol')->name('api.rol');
+

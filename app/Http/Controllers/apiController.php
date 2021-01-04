@@ -19,11 +19,25 @@ class apiController extends Controller
     }
 
 
+    public function user($id)
+    {
+        $user = User::select('id', 'name', 'email', 'created_at') -> where('id', '=', $id) -> first();
+        
+        return ($user);
+    }
+
+
     public function empleados()
     {
         $empleados = Empleados::select('id', 'name', 'surname', 'email', 'dni', 'roles_id', 'address', 'phone', 'photo') -> get();
         
         return ($empleados);
+    }
+
+    public function empleado($id)
+    {
+        $empleado = Empleados::select('id', 'name', 'surname', 'email', 'dni', 'roles_id', 'address', 'phone', 'photo') -> where('id', '=', $id) -> first();
+        return ($empleado);
     }
 
     public function roles()
@@ -32,8 +46,11 @@ class apiController extends Controller
         
         return ($roles);
     }
-<<<<<<< HEAD
-=======
 
->>>>>>> dcff5a5c70c65484fec160e4240e9ba0a7e2c954
+    public function rol($id)
+    {
+        $rol = Roles::select('id', 'name', 'description') -> where('id', '=', $id) -> first();
+        
+        return ($rol);
+    }
 }
