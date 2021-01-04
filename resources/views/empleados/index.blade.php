@@ -45,7 +45,7 @@ integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbi
                 <th class="text-center" >#</th>
                 <th class="text-center" >Foto</th>
                 <th class="text-center" >Nombre</th>
-                <th class="text-center" >Email</th>
+                <th class="text-center" >Rol</th>
                 <th class="text-center" >Acciones</th>
             </tr>
         </thead>
@@ -58,7 +58,7 @@ integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbi
                         <img src="{{ asset('storage').'/'.$Empleado->photo }}" class="img-thumbnail img-fluid" alt="" width="100">
                     </td>
                     <td class="text-center align-middle" >{{ $Empleado->name . " " . $Empleado->surname  }}</td>
-                    <td class="text-center align-middle" >{{ $Empleado->email  }}</td>
+                    <td class="text-center align-middle" >{{ $Empleado->rol  }}</td>
                     <td class="text-center align-middle"> 
 
                         <a class="btn btn-success" href="{{ url('/empleados/'.$Empleado->id.'/viewmore') }}">
@@ -81,7 +81,7 @@ integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbi
 
     </table>
     <div class="row justify-content-center align-items-center">
-            {{ $Empleados->links() }}
+            
     </div>
     
 </div>

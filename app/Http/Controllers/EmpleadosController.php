@@ -18,8 +18,11 @@ class EmpleadosController extends Controller
     public function index()
     {
         //
-        $datos['Empleados']=Empleados::paginate(5);
+        //$datos['Empleados']=Empleados:: orderBy('id' , 'desc') -> paginate(5);
 
+        $datos['Empleados']=Empleados::select('empleados') -> join('roles', 'roles.id' , '=', 'empleados.roles_id') 
+        -> select('empleados.id', 'empleados.name', 'empleados.surname', 'empleados.email', 'empleados.dni', 'empleados.address', 'empleados.phone', 'empleados.photo', 'roles.name as rol') -> get();
+        
         return view('empleados.index', $datos);
     }
     /**

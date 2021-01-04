@@ -29,7 +29,10 @@ class apiController extends Controller
 
     public function empleados()
     {
-        $empleados = Empleados::select('id', 'name', 'surname', 'email', 'dni', 'roles_id', 'address', 'phone', 'photo') -> get();
+
+        $empleados  = Empleados::select('empleados') -> join('roles', 'roles.id' , '=', 'empleados.roles_id') 
+        -> select('empleados.id', 'empleados.name', 'empleados.surname', 'empleados.email', 'empleados.dni', 'empleados.address', 'empleados.phone', 'empleados.photo', 'roles.name as rol') 
+        -> get();
         
         return ($empleados);
     }
@@ -37,6 +40,7 @@ class apiController extends Controller
     public function empleado($id)
     {
         $empleado = Empleados::select('id', 'name', 'surname', 'email', 'dni', 'roles_id', 'address', 'phone', 'photo') -> where('id', '=', $id) -> first();
+        
         return ($empleado);
     }
 
