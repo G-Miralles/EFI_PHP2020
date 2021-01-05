@@ -39,7 +39,10 @@ class apiController extends Controller
 
     public function empleado($id)
     {
-        $empleado = Empleados::select('id', 'name', 'surname', 'email', 'dni', 'roles_id', 'address', 'phone', 'photo') -> where('id', '=', $id) -> first();
+        $empleado  = Empleados::select('empleados') -> join('roles', 'roles.id' , '=', 'empleados.roles_id') 
+        -> select('empleados.id', 'empleados.name', 'empleados.surname', 'empleados.email', 'empleados.dni', 'empleados.address', 'empleados.phone', 'empleados.photo', 'roles.name as rol') 
+        -> where('empleados.id', '=', $id) -> first();
+
         
         return ($empleado);
     }
