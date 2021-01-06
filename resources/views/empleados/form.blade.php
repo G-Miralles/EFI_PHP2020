@@ -86,7 +86,28 @@
     </div>
 </div>
 
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+<!-- Google Maps JavaScript library -->
+<script
+    src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyCvsgezOM3xFkiKYKh_t1xgEqxKvZWnJUs">
+</script>
 
+
+<script>
+    let address = 'address';
+
+    $(document).ready(function () {
+        let autocomplete;
+        autocomplete = new google.maps.places.Autocomplete((document.getElementById('address')), {
+            types: ['geocode'],
+        });
+
+        google.maps.event.addListener(autocomplete, 'place_changed', function () {
+            let near_place = autocomplete.getPlace();
+        });
+    });
+</script>
 
 
 
